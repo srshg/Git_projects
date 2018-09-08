@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+{% load rest_framework %}
+
+
+
+{% block content %}
+<html><body>
+<div align="right"><a href="/">HOME</a></div>
+<h1>Rental - {{ Rental.id }}</h1>
+
+<table>
+
+<form action="{% url 'rentals:details' pk=Rental.id %}" method="POST">
+    {% csrf_token %}
+    {% render_form serializer %}
+    <tr>
+        <td>
+            <input type="submit" value="Update">
+        </td>
+
+</form>
+
+        <form action="{% url 'rentals:details' pk=Rental.id %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="_method" value="delete">
+            <td>
+                 <input type="submit" value="Delete">
+            </td>
+
+
+</form>
+     </tr>
+</table>
+
+{% endblock %}
+
+
+
+</body></html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <title>Rentals</title>
+    </head>
+
+    <body>
+    <div align="right"><a href="/">HOME</a></div>
+
+        <h1>Welcome to Rental Portal</h1>
+
+
+        <button style="font:14px solid"><a href="create/">Add New Rental</a></button>
+
+        <table style="width:100%" border="1" >
+            <thead >
+            <tr>
+                <th>Rental ID</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Cost</th>
+                <th>Car</th>
+
+            </tr>
+            </thead>
+           {% if rentallist %}
+                {% for Rental in rentallist %}
+                 <tr><td><a href="{{ Rental.id }}">{{ Rental.id }}</a></td>
+                     <td>{{ Rental.startdate }}</td>
+                     <td>{{ Rental.enddate }}</td>
+                     <td>{{ Rental.cost }}</td>
+                     <td>{{ Rental.car.id }}</td>
+                     <td><input type="button" value="Delete"></td>
+                {% endfor %}
+        {% endif %}
+
+</tr>
+
+        </table>
+
+
+    </body>
+</html>

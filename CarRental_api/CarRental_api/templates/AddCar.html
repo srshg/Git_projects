@@ -1,0 +1,14 @@
+{% load rest_framework %}
+
+{% block content %}
+<div align="right"><a href="/">HOME</a></div>
+    <h1>New Car</h1>
+    <form method="POST">{% csrf_token %}
+        {% render_form serializer %}
+        <input type="submit" value="Save">
+        <input type="button" value="Cancel" onclick="javascript:window.open({% url 'cars:list'%},true)">
+
+
+    </form>
+{% endblock %}
+

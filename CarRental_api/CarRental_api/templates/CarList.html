@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cars</title>
+    </head>
+    <body>
+     <div align="right"><a href="/">HOME</a></div>
+    <h1 align="center">Welcome to Car Store</h1>
+
+    <button style="color:blue; font:14px solid" ><a href="create/">Add New Car</a></button>
+
+        <table style="width:100%" border="1" >
+            <thead >
+            <tr>
+                <th>Car ID</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Year</th>
+
+            </tr>
+            </thead>
+           {% if carlist %}
+                {% for Cars in carlist %}
+                 <tr><td><a href="{{ Cars.id }}">{{ Cars.id }}</a></td>
+                     <td>{{ Cars.brand }}</td>
+                     <td>{{ Cars.model }}</td>
+                     <td>{{ Cars.year }}</td>
+
+
+                {% endfor %}
+        {% endif %}
+
+</tr>
+
+        </table>
+    <script>
+
+
+    </script>
+
+
+    </body>
+</html>
